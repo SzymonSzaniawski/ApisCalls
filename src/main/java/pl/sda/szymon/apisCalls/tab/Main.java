@@ -68,59 +68,6 @@ public class Main {
                     e.printStackTrace();
                 }
                 break;
-            case "B":
-                HttpRequest requestB = HttpRequest.newBuilder().GET()
-                        .uri(URI.create("http://api.nbp.pl/api/exchangerates/tables/b/?format=json"))
-                        .build();
-                try {
-
-                    HttpResponse<String> resp = httpClient.send(requestB, HttpResponse.BodyHandlers.ofString());
-
-
-                    String responseBody = resp.body();
-
-                    ObjectMapper mapper = new ObjectMapper();
-
-                    List<TableAa> notowanie = mapper.readValue(
-                            responseBody, new TypeReference<List<TableAa>>() {
-                            }
-                    );
-
-                    notowanie.forEach(System.out::println);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                break;
-            case "C":
-                HttpRequest requestC = HttpRequest.newBuilder().GET()
-                        .uri(URI.create("http://api.nbp.pl/api/exchangerates/tables/C/?format=json"))
-                        .build();
-                try {
-
-                    HttpResponse<String> resp = httpClient.send(requestC, HttpResponse.BodyHandlers.ofString());
-
-
-                    String responseBody = resp.body();
-
-                    ObjectMapper mapper = new ObjectMapper();
-
-                    List<TableAa> notowanie = mapper.readValue(
-                            responseBody, new TypeReference<List<TableAa>>() {
-                            }
-                    );
-
-                    notowanie.forEach(System.out::println);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                break;
-            default:
         }
     }
 }
