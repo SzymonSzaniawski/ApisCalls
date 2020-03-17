@@ -8,7 +8,7 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString//(of = {"currency", "code","mid"})
+@ToString
 @NoArgsConstructor
 
 public class Rates {
