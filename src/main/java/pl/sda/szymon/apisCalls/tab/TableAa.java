@@ -15,7 +15,7 @@ public class TableAa {
 
         private String table;
         private String no;
-        private String data;
+        private String effectiveDate;
         private List<Rates> rates;
 
 
